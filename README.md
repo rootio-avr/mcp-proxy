@@ -6,12 +6,12 @@ An MCP server that provides container image vulnerability scanning and remediati
 
 ### Environment Variables
 
-- `API_ACCESS_TOKEN` (optional): Access token for authentication
+- `API_ACCESS_TOKEN`: Access token for authentication
 
 ### Running the Container
 
 ```bash
-docker run -e API_ACCESS_TOKEN=your_token ghcr.io/sparfenyuk/mcp-proxy:latest
+docker run -e API_ACCESS_TOKEN=your_token rootpublic/mcp-proxy
 ```
 
 ### Configuration
