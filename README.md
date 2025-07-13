@@ -1,7 +1,7 @@
 # <img src="./assets/root-logo.svg" alt="Root.io Logo" width="40"> Root.io MCP Server & Proxy
 
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Docker Hub](https://img.shields.io/docker/pulls/rootpublic/mcp-proxy)](https://hub.docker.com/r/rootpublic/mcp-proxy)
+[![Docker Hub](https://img.shields.io/docker/pulls/mcp/root)](https://hub.docker.com/r/mcp/root)
 [![Project Status](https://img.shields.io/badge/status-maintained-brightgreen)](https://github.com/root-io/mcp-proxy)
 
 🚀 **Seamlessly connect Claude (and other AI clients like Cursor) to [Root.io](https://app.root.io)'s powerful container security platform through the Model Context Protocol (MCP).**
@@ -25,19 +25,32 @@ The [Root.io](https://app.root.io) MCP solution provides AI-powered container se
 - 📈 Provides actionable security insights and compliance reporting
 - 🛡️ Maintains zero-trust security posture for containerized applications
 
-## 📋 Prerequisites
-
-Before getting started, ensure you have:
-
-1. 🏢 **[Root.io](https://app.root.io) Account**: Sign up at [app.root.io](https://app.root.io) to get your API access token
-2. 🐳 **Docker**: Install Docker Desktop or Docker Engine on your system
-3. 🤖 **AI Client**: Install your preferred AI client (Claude Desktop, Cursor, etc.)
-
 ## 🚀 Getting Started
 
-### 📦 Quick Setup with Docker
+### Option 1: 📦 Docker MCP (Recommended)
 
-The easiest way to get started is using our pre-built Docker image:
+The easiest way to get started is using our published MCP from the catalog:
+#### Prerequisites
+1. 🐳 **Docker Desktop**: Install Docker Desktop from [Docker.com](https://www.docker.com/products/docker-desktop)
+2. 📦 **Docker MCP Toolkit**: Configure the Docker MCP Toolkit with the clients you want to use
+   
+   ![Docker Desktop Clients](./assets/docker%20desktop%20clients.png)
+3. 🏢 **[Root.io](https://app.root.io) Account**: Sign up at [app.root.io](https://app.root.io) to get your API access token
+
+#### Steps
+1. **📦 Docker Catalog**: Navigate on Docker Desktop under MCP Toolkit --> Catalog and search for "root" 🌱
+2. **➕ Add MCP**: Click the Plus button to add the MCP server
+   
+   ![Root MCP](./assets/root%20mcp.png)
+3. **📝 Configure**: Enter your [Root.io](https://app.root.io) API token 🔑
+   - Log into your [Root.io](https://app.root.io) account
+   - Click your profile
+   - Generate a new API token for MCP integration
+   - Paste it in the Docker Desktop Root.io MCP configuration
+
+### Option 2: 🔧 Standalone Setup
+
+Alternatively, you can run the MCP server standalone using our Docker image:
 
 ```json
 {
@@ -47,7 +60,7 @@ The easiest way to get started is using our pre-built Docker image:
       "args": [
         "run", "--rm", "-i",
         "-e", "API_ACCESS_TOKEN",
-        "rootpublic/mcp-proxy"
+        "mcp/root"
       ],
       "env": {
         "API_ACCESS_TOKEN": "<your_root_api_token>"
@@ -57,7 +70,7 @@ The easiest way to get started is using our pre-built Docker image:
 }
 ```
 
-### 🔧 Configuration Steps
+#### Configuration Steps
 
 1. **Configure Your AI Client** ⚙️
    - Open Claude Desktop (or your preferred AI client)
@@ -137,7 +150,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 <div align="center">
-  <strong>Your Image, But Better</strong><br>
-   <img src="./assets/Asset 2.svg" alt="drawing" width="300"/>
+   <img src="./assets/Asset 3.svg" alt="drawing" width="300"/>
 </div>
 
